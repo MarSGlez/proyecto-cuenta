@@ -1,0 +1,26 @@
+
+<ion-content>
+  <div id="recaptcha-container"></div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registra tu dispositivo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="phone-selector">
+        <ion-item class="area_code">
+          <ion-label position="floating">Codigo de Area</ion-label>
+          <ion-input placeholder="+52" type="text" [(ngModel)]="area_code"></ion-input>
+        </ion-item>
+        <ion-item class="phone_number">
+          <ion-label position="floating">Numero de Telefono</ion-label>
+          <ion-input placeholder="55505550" type="number" [(ngModel)]="phone_number"></ion-input>
+        </ion-item>       
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+    <ion-button (click)="savePhone()" size="full" [disabled]="!area_code || !phone_number" >Guardar</ion-button>
+</ion-footer>

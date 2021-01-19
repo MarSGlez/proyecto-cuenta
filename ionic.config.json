@@ -1,5 +1,7 @@
 {
   "name": "proyecto-cuenta",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
