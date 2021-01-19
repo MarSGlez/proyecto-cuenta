@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DatabaseService } from 'src/app/services/database.service';
+import { Users } from 'src/app/models/users';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  users: Users[] = [];
+
+  constructor(
+    private db: DatabaseService,
+  ) {}
+
+  ngOnInit() {
+    this.db.getUsers().subscribe( user => {
+      user.map( user => {
+        const item : Users = user.payload.doc.data() as Users ;
+        item.id =  user.payload.doc.id;
+        this.users.push( item ) 
+      })
+    })
+  }
 
 }

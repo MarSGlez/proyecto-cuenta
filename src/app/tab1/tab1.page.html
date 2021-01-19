@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Clientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-list-header>
+      Lista de Clientes
+    </ion-list-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-item lines="inset" *ngFor="let data of users">
+      <ion-avatar slot="start">
+        <img src="./assets/default-avatar.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{data.nombre}}</h2>
+        <h3>{{data.ubicacion}}</h3>
+      </ion-label>
+    </ion-item>
+
+
+  </ion-list>
+
 </ion-content>
