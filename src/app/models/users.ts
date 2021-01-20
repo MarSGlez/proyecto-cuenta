@@ -4,11 +4,12 @@ export class Users {
     saldo: string;
     ubicacion: string;
 
-    constructor( notData?: any ){
-        if( notData ){
-            Object.keys( notData ).forEach( key => {
-                this[key] = notData[key];
+    constructor( user?: any ){
+        if( user ){
+            Object.keys( user ).forEach( key => {
+                this[key] = user[key];
             });
         }
     }
+
 }

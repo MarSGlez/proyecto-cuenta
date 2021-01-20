@@ -12,13 +12,14 @@ export class Tab1Page {
   users: Users[] = [];
 
   constructor(
-    private db: DatabaseService,
+    private db: DatabaseService
   ) {}
 
   ngOnInit() {
     this.db.getUsers().subscribe( user => {
-      user.map( user => {
-        const item : Users = user.payload.doc.data() as Users ;
+      this.users = []
+      user.forEach( user => {
+        const item = new Users ( user.payload.doc.data() ) ;
         item.id =  user.payload.doc.id;
         this.users.push( item ) 
       })

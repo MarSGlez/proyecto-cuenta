@@ -13,4 +13,9 @@ export class DatabaseService {
   getUsers(){
     return this.firestore.collection('users').snapshotChanges();
   }
+
+  addUser(data: any){
+    return this.firestore.collection('users').add(data);
+
+ }
 }

@@ -7,10 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-list-header>
-      Lista de Clientes
-    </ion-list-header>
+  <br>
+  <ion-list-header>
+    Lista de Clientes
+  </ion-list-header>
+
+  <ion-list *ngIf=" users && users.length">
 
     <ion-item lines="inset" *ngFor="let data of users">
       <ion-avatar slot="start">
@@ -22,7 +24,13 @@
       </ion-label>
     </ion-item>
 
-
   </ion-list>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['user']" routerDirection="forward" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
