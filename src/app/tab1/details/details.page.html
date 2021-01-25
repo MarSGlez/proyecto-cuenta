@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let array of user; let i=index;" >
+    <ion-slide *ngIf="i==0">
+      <div>
+        <h2>{{ array.nombre }}</h2>
+        <p>{{ array.saldo }}</p>
+      </div>
+    </ion-slide>
+  </ion-item>
+</ion-content>

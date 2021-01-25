@@ -1,5 +1,5 @@
-export class Users {
-    id?: string;
+export class Clientes {
+    id: string;
     nombre: string;
     saldo: string;
     ubicacion: string;

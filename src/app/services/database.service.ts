@@ -16,6 +16,11 @@ export class DatabaseService {
 
   addUser(data: any){
     return this.firestore.collection('users').add(data);
+  }
 
- }
+  getUserById(id: string ){
+    return this.firestore.collection('users').doc(id).snapshotChanges();
+  }
+
+
 }

@@ -12,9 +12,9 @@
     Lista de Clientes
   </ion-list-header>
 
-  <ion-list *ngIf=" users && users.length">
+  <ion-list>
 
-    <ion-item lines="inset" *ngFor="let data of users">
+    <ion-item lines="inset" *ngFor="let data of users" [routerLink]="['details/'+data.id]" routerDirection="forward">
       <ion-avatar slot="start">
         <img src="./assets/default-avatar.png">
       </ion-avatar>
